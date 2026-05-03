@@ -44,6 +44,195 @@ The default view shows **3 months**, with controls to switch between:
 
 ---
 
+## Tools Used
+
+| Tool | Purpose |
+|---|---|
+| **ChatGPT** | Helped break down the prompt, define product requirements, map workflows, write documentation, and refine the case-study narrative. |
+| **Claude Code** | Used to help structure, edit, and implement the prototype/codebase more quickly. |
+| **Claude Design** | Used to support visual exploration, layout refinement, and UI direction. |
+| **Figma / Design Tool** | Used to create low-to-mid fidelity wireframes and prototype screens. |
+| **Mermaid** | Used to document key user flows as lightweight diagrams. |
+| **Markdown / README** | Used to package the design process, product requirements, assumptions, and decisions in a repo-friendly format. |
+| **Aiwyn Design System Notes** | Used as a visual reference for typography, color, UI components, spacing, tone, and accessibility. |
+| **Tella / Loom-style Recording** | Used to record a walkthrough of the work, design decisions, and prototype flow. |
+| **Vercel** | Used to deploy and share the prototype as a live web experience. |
+| **GitHub** | Used to organize and present the design challenge deliverables. |
+
+---
+
+## Process Summary
+
+I approached this as a conflict-prevention workflow for resource managers. I started by reframing the brief, defining the core data model, setting simple weekly capacity assumptions, and mapping the main workflows. From there, I designed a timeline-first interface that shows date-ranged project assignments across staff, highlights capacity risk, explains the project drivers behind conflicts, and gives managers direct resolution paths through reassignment, schedule adjustment, or partner review.
+
+The final prototype focuses on v1 clarity, control, and decision confidence rather than broad scheduling automation.
+
+---
+
+## Process
+
+### 1. Read and reframed the brief
+
+I started by identifying the core problem behind the prompt:
+
+> Resource managers need to understand staff capacity across date-ranged projects and resolve conflicts before staffing decisions are finalized.
+
+The challenge was framed less as a dashboard problem and more as a **conflict-prevention workflow**.
+
+---
+
+### 2. Defined the core product model
+
+I reduced the system to a few key objects:
+
+| Object | Purpose |
+|---|---|
+| **Staff Member** | Person being assigned to project work |
+| **Project** | Date-ranged client engagement |
+| **Assignment** | Staff member + project + date range + weekly hours |
+| **Capacity** | Available hours compared against scheduled hours |
+| **Conflict** | A state where scheduled hours exceed available capacity |
+| **Partner Review** | Lightweight escalation path for unresolved risk |
+
+---
+
+### 3. Set capacity assumptions
+
+To keep the first release lean, I used simple planning assumptions:
+
+- Capacity is calculated weekly
+- Standard capacity is 40 hours/week
+- Projects have start and end dates
+- Assignments use weekly scheduled hours
+- Overlapping projects are combined into weekly allocation
+- Conflicts appear before assignment changes are saved
+
+---
+
+### 4. Chose a timeline-first interface
+
+Because projects can span multiple weeks, I chose a timeline layout instead of a static table.
+
+The timeline makes it easier to see:
+
+- When a project starts and ends
+- Which projects overlap
+- Which weeks are at risk
+- How long a conflict lasts
+- Which staff members need attention
+
+---
+
+### 5. Created product requirements
+
+I translated the brief into a concise set of requirements covering:
+
+- Timeline range controls
+- Staff rows
+- Date-ranged project bars
+- Weekly capacity calculations
+- Allocation thresholds
+- Conflict detection
+- Conflict detail
+- Assignment preview
+- Resolution actions
+- Partner escalation
+
+---
+
+### 6. Mapped key workflows
+
+I mapped the main resource-management flows before designing screens:
+
+- Review capacity
+- Inspect conflict
+- Create assignment
+- Resolve conflict
+- Reassign work
+- Adjust hours/dates
+- Flag for partner review
+
+These flows helped keep the prototype focused on the manager’s decision path instead of becoming a generic scheduling dashboard.
+
+---
+
+### 7. Designed the main prototype states
+
+The prototype focuses on six core states:
+
+| Screen | Purpose |
+|---|---|
+| **Capacity Timeline Overview** | See staff allocation across the selected range |
+| **Staff Capacity Detail Drawer** | Understand what is causing a conflict |
+| **New Assignment Preview** | See capacity impact before saving |
+| **Conflict Detected State** | Surface risk before the assignment is finalized |
+| **Resolve Conflict** | Compare reassignment and adjustment options |
+| **Partner Review** | Escalate unresolved risk with context |
+
+---
+
+### 8. Applied visual direction
+
+The UI follows an Aiwyn-inspired enterprise SaaS direction:
+
+- Plus Jakarta Sans
+- Blue primary actions
+- Clean white cards
+- Light gray surfaces
+- Status chips
+- Rounded panels
+- Minimal line icons
+- Clear alert states
+- High contrast status labels
+
+The goal was to make the interface feel professional, calm, and operational without over-polishing the challenge.
+
+---
+
+### 9. Built and deployed the prototype
+
+After defining the product requirements and flows, I used AI-assisted design and development tools to move quickly from concept to working prototype.
+
+The prototype was organized in GitHub and deployed through Vercel so the work could be reviewed as a live web experience.
+
+---
+
+### 10. Documented scope and tradeoffs
+
+I separated what belongs in the first release from what should come later.
+
+V1 focuses on:
+
+- Visibility
+- Explanation
+- Pre-save conflict detection
+- Direct resolution actions
+
+Later releases could add:
+
+- Scenario planning
+- PTO and holiday logic
+- AI recommendations
+- Forecasting
+- Full partner approval workflow
+- Integrations with time, billing, and project systems
+
+---
+
+### 11. Recorded the walkthrough
+
+The final step was recording a short walkthrough covering:
+
+- The problem framing
+- Why the view is timeline-based
+- How capacity is calculated
+- How conflicts are surfaced
+- How managers resolve issues
+- What is in and out of scope
+- What I would prioritize next
+
+---
+
 ## Key Screens
 
 ### 1. Capacity Timeline Overview
